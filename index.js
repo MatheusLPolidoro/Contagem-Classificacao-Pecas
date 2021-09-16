@@ -1,3 +1,4 @@
 let NomeProprio = "Matheus"
-console.log(NomePriprio)
-const NomeProprio = "Lucas"
+console.log(NomeProprio)
+const NomeProprioFixo = "Lucas"
+console.log(NomeProprioFixo)
