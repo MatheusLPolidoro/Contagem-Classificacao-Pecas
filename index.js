@@ -9,15 +9,17 @@ const rl = require('readline-sync'); // responsavel pelo input da leitura (reque
 // definição de variáveis
 var ListaDePeca = [], // Array para armazenar todas as pecas e seus respectivos pesos
 PecaAtual = {
-// propriedades da peca    
+// propriedades da peça    
 nome: '', 
 peso: 0
 },
 Sair = false, // variável do tipo lógico sair do loop 
 Escolha = 'S', // recebe a escolha do usuário, conforme a escolha segue um caminho da estrutura condicional
 Mensagem, // mensagem para apresentar na saída do usuário
-MaxListaPeca, // definição do tamanho maxímo 
-i = 0 // indice para percorrer os itens da Lista de peças
+MaxListaPeca, // definição do tamanho maxímo da lista, corresponde ao tamanho da caixa 
+MinCaracter, // definição do tamanho mínimo de caracteres da peça
+MinPeso, // definição do peso mínimo de cada peça
+i = 1 // indice para percorrer os itens da Lista de peças
 ; 
 
 // atribuição inicial de valores pré definidos pelo enunciado, caso queira trocar os valores fica mais simples dessa forma
@@ -38,7 +40,6 @@ do {
                 ListaDePeca.push(PecaAtual.nome);
                 ListaDePeca.push(PecaAtual.peso);
                 Mensagem = '\nCadastro da peça "' + PecaAtual.nome + '" realizadado com sucesso.\n';
-                i ++;
             } else {
                 Mensagem = 'Devido ao peso abaixo de 100 gramas, peça não cadastrada.\n';
             }
@@ -56,8 +57,6 @@ do {
         Sair = true;
     }
 } while (Sair == false);
-
-i = 1;
 
 // mostrar a lista de peças
 console.log('\n\t-- Lista de Peças Cadastradas --')
