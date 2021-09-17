@@ -43,7 +43,7 @@ do{
                 Mensagem = 'Devido ao peso abaixo de 100 gramas, peça não cadastrada.\n';
             }
         } else {
-            Mensagem = 'Devido a quantidade de caracteres "inferior" a' + MinCaracter +', peça não cadastrada\n';
+            Mensagem = 'Devido a quantidade de caracteres "inferior" a ' + MinCaracter +', peça não cadastrada.\n';
         }
         if (ListaDePeca.length < MaxListaPeca){
             console.log(Mensagem);
