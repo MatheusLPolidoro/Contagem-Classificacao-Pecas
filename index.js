@@ -29,12 +29,12 @@ MinPeso = 100;
 // armazenar as peças
 
 console.log('\n\t-- Cadastro de Peças --')
-do{
-    if (Escolha == "S"){
+do {
+    if (Escolha == "S") {
         PecaAtual.nome = rl.question('\nQual o nome da peca que deseja cadastrar? ');
         if (PecaAtual.nome.length > MinCaracter) {
             PecaAtual.peso = rl.question('Qual o peso em gramas desse objeto? ');
-            if (PecaAtual.peso >= MinPeso){
+            if (PecaAtual.peso >= MinPeso) {
                 ListaDePeca.push(PecaAtual.nome);
                 ListaDePeca.push(PecaAtual.peso);
                 Mensagem = '\nCadastro da peça "' + PecaAtual.nome + '" realizadado com sucesso.\n';
@@ -45,7 +45,7 @@ do{
         } else {
             Mensagem = 'Devido a quantidade de caracteres "inferior" a ' + MinCaracter +', peça não cadastrada.\n';
         }
-        if (ListaDePeca.length < MaxListaPeca){
+        if (ListaDePeca.length < MaxListaPeca) {
             console.log(Mensagem);
             Escolha = rl.question('Deseja cadastrar mais uma?\n ["S" para SIM e "N" para NAO]: ').trim().toUpperCase();
         } else {
