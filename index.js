@@ -27,14 +27,15 @@ MinCaracter = 3;
 MinPeso = 100;
 
 // armazenar as peças
-while (Sair == false && ListaDePeca.length < MaxListaPeca){
+do{
     if (Escolha == "S"){
-        PecaAtual.nome = rl.question('Qual o nome da peca que deseja cadastrar? ');
+        PecaAtual.nome = rl.question('\nQual o nome da peca que deseja cadastrar? ');
         if (PecaAtual.nome.length > MinCaracter) {
             PecaAtual.peso = rl.question('Qual o peso em gramas desse objeto? ');
             if (PecaAtual.peso >= MinPeso){
-                ListaDePeca[i] = PecaAtual;
-                Mensagem = 'Cadastro da peça ' + PecaAtual.nome + ' realizadado com sucesso.\n';
+                ListaDePeca.push(PecaAtual.nome);
+                ListaDePeca.push(PecaAtual.peso);
+                Mensagem = '\nCadastro da peça "' + PecaAtual.nome + '" realizadado com sucesso.\n';
                 i ++;
             } else {
                 Mensagem = 'Devido ao peso abaixo de 100 gramas, peça não cadastrada.\n';
@@ -51,12 +52,15 @@ while (Sair == false && ListaDePeca.length < MaxListaPeca){
     } else {
         Sair = true;
     }
-};
+} while (Sair == false || ListaDePeca.length == MaxListaPeca);
+
+i = 1;
 
 // mostrar a lista de peças
-console.log('\t--Lista de Peças cadastradas--')
-for (i = 0; i < ListaDePeca.length; i ++) {
-    console.log(i + 1 + '° peça: ' + ListaDePeca[i].nome);
+console.log('\n\t--Lista de Peças cadastradas--')
+for (let index = 0; i <= ListaDePeca.length / 2; index += 2) {
+    console.log('\t' + i + '° Peça: ' + ListaDePeca[index] + '\t|' + ' Peso: ' + ListaDePeca[index + 1] + ' Gramas');
+    i ++;
 }
 
-rl.question(''); // caso rodar no terminal do node ou prompt serve para manter a mensagem final para o usuário.
+rl.question(''); // caso rodar no terminal do Node ou prompt serve para manter a mensagem final para o usuário.
