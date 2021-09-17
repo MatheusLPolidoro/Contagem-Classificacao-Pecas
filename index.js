@@ -27,6 +27,8 @@ MinCaracter = 3;
 MinPeso = 100;
 
 // armazenar as peças
+
+console.log('\n\t-- Cadastro de Peças --')
 do{
     if (Escolha == "S"){
         PecaAtual.nome = rl.question('\nQual o nome da peca que deseja cadastrar? ');
@@ -57,7 +59,7 @@ do{
 i = 1;
 
 // mostrar a lista de peças
-console.log('\n\t--Lista de Peças cadastradas--')
+console.log('\n\t-- Lista de Peças Cadastradas --')
 for (let index = 0; i <= ListaDePeca.length / 2; index += 2) {
     console.log('\t' + i + '° Peça: ' + ListaDePeca[index] + '\t|' + ' Peso: ' + ListaDePeca[index + 1] + ' Gramas');
     i ++;
