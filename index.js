@@ -45,7 +45,7 @@ do {
         } else {
             Mensagem = 'Devido a quantidade de caracteres "inferior" a ' + MinCaracter +', peça não cadastrada.\n';
         }
-        if (ListaDePeca.length < MaxListaPeca) {
+        if (ListaDePeca.length / 2 < MaxListaPeca) {
             console.log(Mensagem);
             Escolha = rl.question('Deseja cadastrar mais uma?\n ["S" para SIM e "N" para NAO]: ').trim().toUpperCase();
         } else {
