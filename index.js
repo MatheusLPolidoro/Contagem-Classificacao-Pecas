@@ -32,7 +32,7 @@ console.log('\n\t-- Cadastro de Peças --')
 do {
     if (Escolha == "S") {
         PecaAtual.nome = rl.question('\nQual o nome da peca que deseja cadastrar? ');
-        if (PecaAtual.nome.length > MinCaracter) {
+        if (PecaAtual.nome.length >= MinCaracter) {
             PecaAtual.peso = rl.question('Qual o peso em gramas desse objeto? ');
             if (PecaAtual.peso >= MinPeso) {
                 ListaDePeca.push(PecaAtual.nome);
