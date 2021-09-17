@@ -50,11 +50,12 @@ do {
             Escolha = rl.question('Deseja cadastrar mais uma?\n ["S" para SIM e "N" para NAO]: ').trim().toUpperCase();
         } else {
             console.log('Capacidade máxima de '+ MaxListaPeca + ' atingida!');
+            Sair = true;
         }
     } else {
         Sair = true;
     }
-} while (Sair == false || ListaDePeca.length == MaxListaPeca);
+} while (Sair == false);
 
 i = 1;
 
