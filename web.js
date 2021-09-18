@@ -11,10 +11,11 @@ peso: 0
 },
 Sair = false, // variável do tipo lógico sair do loop 
 Escolha = 'S', // recebe a escolha do usuário, conforme a escolha segue um caminho da estrutura condicional
-Mensagem, // mensagem para apresentar na saída do usuário
+Mensagem, // mensagem para apresentar na saída ao usuário
 MaxListaPeca, // definição do tamanho maxímo da lista, corresponde ao tamanho da caixa 
 MinCaracter, // definição do tamanho mínimo de caracteres da peça
-MinPeso, // definição do peso mínimo de cada peça
+MinPeso,  // definição do peso mínimo de cada peça
+MensagemLista, // mensagem para apresentar na saída final ao usuário
 i = 1 // indice para percorrer os itens da Lista de peças
 ; 
 
@@ -26,16 +27,16 @@ MinPeso = 100;
 
 // armazenar as peças
 
-window.alert('\n\t-- Cadastro de Peças --')
+window.alert('-- Cadastro de Peças --')
 do {
-    if (Escolha == "S") {
-        PecaAtual.nome = window.prompt('\nQual o nome da peca que deseja cadastrar? ');
+    if (Escolha === "S") {
+        PecaAtual.nome = window.prompt('Qual o nome da peca que deseja cadastrar? ');
         if (PecaAtual.nome.length >= MinCaracter) {
             PecaAtual.peso = window.prompt('Qual o peso em gramas desse objeto? ');
             if (PecaAtual.peso >= MinPeso) {
                 ListaDePeca.push(PecaAtual.nome);
                 ListaDePeca.push(PecaAtual.peso);
-                Mensagem = '\nCadastro da peça "' + PecaAtual.nome + '" realizadado com sucesso.\n';
+                Mensagem = 'Cadastro da peça "' + PecaAtual.nome + '" realizadado com sucesso.\n';
             } else {
                 Mensagem = 'Devido ao peso abaixo de 100 gramas, peça não cadastrada.\n';
             }
@@ -52,12 +53,13 @@ do {
     } else {
         Sair = true;
     }
-} while (Sair == false);
+} while (Sair === false);
 
 // mostrar a lista de peças
-window.alert('\n\t-- Lista de Peças Cadastradas --')
+MensagemLista = '';
+window.alert('-- Lista de Peças Cadastradas --')
 for (let index = 0; i <= ListaDePeca.length / 2; index += 2) {
-    window.alert('\t' + i + '° Peça: ' + ListaDePeca[index] + '\t|' + ' Peso: ' + ListaDePeca[index + 1] + ' Gramas');
+    MensagemLista = MensagemLista + (i + '° Peça: ' + ListaDePeca[index] + ' |  Peso: ' + ListaDePeca[index + 1] + ' Gramas\n');
     i ++;
 }
-
+window.alert(MensagemLista);
