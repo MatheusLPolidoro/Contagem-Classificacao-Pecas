@@ -30,7 +30,7 @@ MinPeso = 100;
 window.alert('-- Cadastro de Peças --')
 do {
     if (Escolha === "S") {
-        PecaAtual.nome = window.prompt('Qual o nome da peca que deseja cadastrar? ');
+        PecaAtual.nome = window.prompt('Qual o nome da peça que deseja cadastrar? ');
         if (PecaAtual.nome.length >= MinCaracter) {
             PecaAtual.peso = window.prompt('Qual o peso em gramas desse objeto? ');
             if (PecaAtual.peso >= MinPeso) {
