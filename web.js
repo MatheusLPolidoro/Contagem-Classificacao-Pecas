@@ -3,7 +3,7 @@
 // sistema de cadastro de peças
 
 // definição de variáveis
-var ListaDePeca = [], // Array para armazenar todas as pecas e seus respectivos pesos
+var ListaDePeca = [], // Array para armazenar todas as peças e seus respectivos pesos
 PecaAtual = {
 // propriedades da peça    
 nome: '', 
