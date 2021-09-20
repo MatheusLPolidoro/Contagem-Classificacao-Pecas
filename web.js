@@ -1,6 +1,6 @@
 // Autor: Matheus Latancio Polidoro | data: 16/09/2021 | Senai Front-end
 
-// sistema de cadastro de peças
+// sistema de contagem e cadastro de peças
 
 // definição de variáveis
 var ListaDePeca = [], // Array para armazenar todas as peças e seus respectivos pesos
@@ -55,7 +55,7 @@ do {
     }
 } while (Sair === false);
 
-// mostrar a lista de peças
+// contagem das peças
 MensagemLista = '';
 window.alert('-- Lista de Peças Cadastradas --')
 for (let index = 0; i <= ListaDePeca.length / 2; index += 2) {
